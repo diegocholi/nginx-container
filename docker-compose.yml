@@ -4,6 +4,8 @@ services:
     image: nginx
     volumes:
       - .:/usr/share/nginx/html
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    restart: unless-stopped
     ports:
       - "80:80"
     environment:
